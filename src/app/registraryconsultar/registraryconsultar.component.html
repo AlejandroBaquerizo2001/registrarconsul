@@ -1,0 +1,33 @@
+<div class="container textcenter">
+    <div class="form-control-lg">
+        <label for="Nombre" class="form-label">Nombre</label>
+        <br>
+        <input type="text" [(ngModel)]="Nombre" class=" form-control-lg " placeholder="ingrese nombre">
+        <br>
+        <label for="Resumen" class="form-label ">Resumen</label>
+        <br>
+        <input type="text " [(ngModel)]="Resumen" class=" form-control-lg " placeholder="ingrese resumen">
+        <br>
+        <button class="btn btn-outline-success m-2 " (click)="agregar() ">Agregar Producto</button>
+    </div>
+</div>
+<div class="container mt-4">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Nombre de la pelicula</th>
+                <th scope="col">Resumen</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(elem of listadoDatos; track elem){
+            <tr>
+                <td>{{elem.id}}</td>
+                <td>{{elem.nombre}}</td>
+                <td>{{elem.resumen}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
